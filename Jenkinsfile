@@ -15,13 +15,13 @@ pipeline{
             }
         }
         
-        stages {
-        stage('Build') {
-            steps {
-                script ('maven'){
-                  sh 'mvn version'
-                }
-            }
+        stage("Maven clean build") {
+  steps { 
+    def M2_HOME = tool name:"Maven-3.8.6", type: "maven"
+    def mavenCMD = "${M2_HOME}/bin/mvn"
+    sh "${mavenCMD} clean package"
+   }
+}
             
         
     }
