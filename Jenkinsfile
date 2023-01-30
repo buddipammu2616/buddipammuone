@@ -10,7 +10,7 @@ pipeline{
                 
                 script{
                     
-                    git branch: 'master', url: ''
+                    git branch: 'master', url: 'https://github.com/buddipammu2616/buddipammuone.git'
                 }
             }
         }
