@@ -17,7 +17,7 @@ pipeline{
         
         stage('Build') {
             steps {
-                container ('maven'){
+                script ('maven'){
                   sh 'mvn version'
                 }
             }
