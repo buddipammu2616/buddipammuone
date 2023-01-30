@@ -1,6 +1,9 @@
 pipeline{
     
     agent any 
+    environment {
+        PATH = "/opt/maven3.6/bin:$PATH"
+    }
     
     stages {
         
@@ -14,15 +17,17 @@ pipeline{
                 }
             }
         }
+        stage('build code') {
+            steps {
+                script {
+                    sh " mvn clean install "
+                }
+            }
+        }
+          
+            
         
-        stage("Maven clean build") {
-  steps { 
-     mavenHome = tool name:"Maven-3.6", type: "maven"
-     mavenCMD = "${mavenHome}/bin/mvn"
-    sh "${mavenCMD} clean package"
-   }
-}
-   
+        
 
             
      }
