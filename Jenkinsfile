@@ -15,6 +15,14 @@ pipeline{
             }
         }
         
+        stages {
+        stage('Build') {
+            steps {
+                script ('maven'){
+                  sh 'mvn version'
+                }
+            }
+            
         
     }
 }
