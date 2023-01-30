@@ -15,22 +15,6 @@ pipeline{
             }
         }
         
-        stage('Build') {
-            steps {
-                script ('maven'){
-                  sh 'mvn version'
-                }
-            }
-        }
-        stage('Maven build'){
-            
-            steps{
-                
-                script{
-                    
-                    sh 'mvn clean install'
-                }
-            }
-        }
+        
     }
 }
